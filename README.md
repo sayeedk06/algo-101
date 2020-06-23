@@ -1,2 +1,2 @@
-# algo-101
-A repo where I try to code different kinds of algorithms in python 
+# Algorithm 101
+Here I try to list a number of popular algorithms starting with Sorting algos 
