@@ -1,6 +1,6 @@
 import argparse
 import importlib
-
+import time
 
 """Commandline argument paser starts here"""
 parser = argparse.ArgumentParser(description='Process sorting data')
@@ -32,6 +32,8 @@ except IOError:
     print("Wrong sorting algorithm")
 
 
+start_time = time.time()
 plugin.Sort(intdata)
-sortResult(intdata, "insertionSort")
+print("Execution time: %s seconds" % (time.time() - start_time))
+sortResult(intdata, args.sort_type)
 print("\nSorted = " + str(intdata))

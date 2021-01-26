@@ -5,7 +5,7 @@
 
 class Plugin:
     def __init__(self, *args, **kwargs):
-        print( args + "sort is activated")
+        print("sortType: ", args)
 
     def Sort(self, A):
         for i in range(1,len(A)):
