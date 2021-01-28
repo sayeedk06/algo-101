@@ -1,26 +1,38 @@
-A = [5, 10, 1, 3, 7, 18, 2]
+# A = [10, 16, 8, 12, 15, 6, 3, 9,5]
+A = [16, 4, 2, 1, 17, 3]
 
-def quicksort(A):
+def swap(a, b):
+        temp = A[a]
+        A[a] = A[b]
+        A[b] = temp
 
-    pivot = 0
-    i = 0
-    j = len(A)-1
+def partition(i, j):
 
-    while(A[i] <= A[pivot]):
-        i+=1
-    while(A[j] > A[pivot]):
-        j-=1
+    pivot = i
+    # i = 0
+    # j = len(A)-1
 
+    while(i < j):        
+        while(A[i] <= A[pivot]):
+            i+=1
+        while(A[j] > A[pivot]):
+            j-=1
 #swap elements
+        if (i<j):
+            swap(i, j)
+
+    swap(pivot, j)
+    return j 
+
+def quick_sort(i, j=len(A)-1):
+    
     if (i < j):
-        temp = A[i]
-        A[i] = A[j]
-        A[j] = temp
+        div = partition(i, j)
+        quick_sort(i, div)
+        quick_sort(div+1, j)
     else:
-        temp = A[j]
-        A[j] = A[pivot]
-        A[pivot] = temp
+        return
 
 print(A)
-quicksort(A)
+quick_sort(0)
 print(A)
