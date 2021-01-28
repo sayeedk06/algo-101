@@ -29,7 +29,7 @@ try:
     plugin = plugin_module.Plugin(args.sort_type, key=123)
     print(plugin)
 except IOError:
-    print("Wrong sorting algorithm")
+    print("Wrong sorting algorithm or given name doesn not exits")
 
 
 start_time = time.time()
